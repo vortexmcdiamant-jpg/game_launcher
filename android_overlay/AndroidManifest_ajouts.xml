@@ -1,0 +1,28 @@
+<!--
+  À AJOUTER dans android/app/src/main/AndroidManifest.xml (ne remplace pas le
+  fichier entier : ajoute seulement ces blocs).
+
+  1) Juste sous <manifest ...> et AVANT <application> : les permissions
+  2) Au même niveau (entre </application> et </manifest>) : le bloc <queries>
+  3) Dans la balise <application> : android:label="Game Launcher"
+-->
+
+<!-- 1) Permissions -->
+<!-- Fermer les processus d'arrière-plan (permission "normale", accordée à l'installation) -->
+<uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+<!-- Piloter « Ne pas déranger » (l'utilisateur doit en plus l'autoriser dans les réglages Android) -->
+<uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+
+<!-- 2) Visibilité des autres applis (obligatoire depuis Android 11 pour lister
+        les jeux et les lancer). Évite la permission QUERY_ALL_PACKAGES, que
+        Google Play restreint. -->
+<queries>
+    <intent>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent>
+    <intent>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.HOME" />
+    </intent>
+</queries>

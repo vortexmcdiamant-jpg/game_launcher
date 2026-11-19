@@ -1,0 +1,30 @@
+name: game_launcher
+description: "Game Launcher futuriste : carrousel 3D, Mode Gaming, son de moteur."
+publish_to: "none"
+version: 0.1.0+1
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  audioplayers: ^6.1.0
+  shared_preferences: ^2.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/audio/engine_start.wav
+
+  # Police futuriste (optionnelle) : télécharge Orbitron (licence OFL) sur
+  # fonts.google.com, copie le .ttf dans assets/fonts/ puis décommente :
+  # fonts:
+  #   - family: Orbitron
+  #     fonts:
+  #       - asset: assets/fonts/Orbitron-VariableFont_wght.ttf
